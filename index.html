@@ -2,65 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Weather app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: rgb(3, 2, 34);
+      color: white;
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bodyContainer {
+      height: 90%;
+      width: 90%;
+    }
+
+    .title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0rem 1rem 0rem;
+    }
+
+    @font-face {
+      font-family: "DMSans-Bold";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Bold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "DMSans-Light";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Light.ttf");
+    }
+    @font-face {
+      font-family: "DMSans-Medium";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Medium.ttf");
+    }
+    @font-face {
+      font-family: "DMSans-SemiBold";
+      src: url("assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf");
+    }
+    @font-face {
+      font-family: "BricolageGrotesque";
+      src: url("assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf");
+    }
+    .about{
+      display: flex;
+      text-align: center;
+      justify-content: space-around;
+      font-size: xxx-large;
+      font-family: "BricolageGrotesque";
+      padding: 1rem;
+    }
+
+    .searchContainer {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+    }
+
+    .search-Bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-input {
+        padding: 8px 8px 8px 30px;
+        font-size: 16px;
+        background-image: url('assets/images/icon-search.svg');
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: 8px center;
+        background-color:rgba(29, 33, 69, 0.843);
+        border-color: transparent;
+        border-radius: 10px;
+        width: 30vw;
+    }
+
+    .search-button {
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        border-color: transparent;
+        background-color: rgb(57, 51, 239);
+        color: white;
+    }
+
+    .location{
+      height: 286px;
+      width: 51.875rem;
+      border-radius: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('assets/images/bg-today-large.svg');
+    }
+
+    .information{
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .temp, .humidity, .wind, .precipitation{
+      height: 6rem;
+      width: 12rem;
+      border-radius: 15px;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+
+    .left-side{
+      flex-shrink: 2;
+      height: 286px;
+      width: 51.875rem;
+    }
+    .right-side{
+      height: 39.5rem;
+      border-radius: 15px;
+      width: 35%;
+      flex-shrink: 1;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+
+    .forecast{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .days{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .daily {
+      font-family: DMSans-Medium;
+      font-size: larger;
+      padding: 1rem 0;
+    }
+    .one, .two, .three, .four, .five, .six, .seven{
+      height: 10rem;
+      width: 6.5rem;
+      border-radius: 15px;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+
   </style>
 </head>
 <body>
+  <div class="bodyContainer">
+    
+    <div class="title">
 
-  Units
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Logo">
+      </div>
 
-  Switch to Imperial/Metric
+      <div class="units">
+        <label for="fruits"><img src="assets/images/icon-units.svg" alt="Units" class="units"></label>
+        <select id="fruits" name="Units">
+          <option value="units">Units</option>
+          <option value="unit-one">Unit-1</option>
+          <option value="unit-one">Unit-1</option>
+        </select>
+      </div>
 
-  Temperature
+    </div>
 
-  Celsius (°C)
-  Fahrenheit (°F)
 
-  Wind Speed
+    <div class="about">How's the sky looking today?</div>
+    
 
-  km/h
-  mph
 
-  Precipitation
+    <div class="searchContainer">
+      <div class="search-Bar">
+        <input type="text" class="search-input" name="search-bar" placeholder="Search for a place..." id="search">
+        <button class="search-button">Search</button>
+      </div>
+    </div>
 
-  Millimeters (mm)
-  Inches (in)
 
-  How's the sky looking today?
+    <div class="forecast">
+      <div class="left-side">
+          <div class="location"></div>
+          
+          
+          <div class="information">
+            <div class="temp"></div>
+            <div class="humidity"></div>
+            <div class="wind"></div>
+            <div class="precipitation"></div>
+          </div>
+          
+          
+          <div class="dailyForecast">
+            <div class="daily">
+              Daily forecast
+            </div>
+              <div class="days">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+                <div class="six"></div>
+                <div class="seven"></div>
+              </div>
+          </div>
 
-  Search for a city, e.g., New York
-  Search
 
-  Feels like
-  <!-- Insert temperature here -->
+      </div>
+      <div class="right-side">
+        <div class="hourly-forecast"></div>
+      </div>
+    </div>
 
-  Humidity
-  <!-- Insert humidity here -->
 
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
 
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
 
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    </div>
 </body>
 </html>

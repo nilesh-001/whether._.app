@@ -4,154 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: rgb(3, 2, 34);
-      color: white;
-      box-sizing: border-box;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-
-    .bodyContainer {
-      height: 90%;
-      width: 90%;
-    }
-
-    .title{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 0rem 1rem 0rem;
-    }
-
-    @font-face {
-      font-family: "DMSans-Bold";
-      src: url("assets/fonts/DM_Sans/static/DMSans-Bold.ttf") format("truetype");
-    }
-    @font-face {
-      font-family: "DMSans-Light";
-      src: url("assets/fonts/DM_Sans/static/DMSans-Light.ttf");
-    }
-    @font-face {
-      font-family: "DMSans-Medium";
-      src: url("assets/fonts/DM_Sans/static/DMSans-Medium.ttf");
-    }
-    @font-face {
-      font-family: "DMSans-SemiBold";
-      src: url("assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf");
-    }
-    @font-face {
-      font-family: "BricolageGrotesque";
-      src: url("assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf");
-    }
-    .about{
-      display: flex;
-      text-align: center;
-      justify-content: space-around;
-      font-size: xxx-large;
-      font-family: "BricolageGrotesque";
-      padding: 1rem;
-    }
-
-    .searchContainer {
-      display: flex;
-      justify-content: space-around;
-      padding: 1rem;
-    }
-
-    .search-Bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .search-input {
-        padding: 8px 8px 8px 30px;
-        font-size: 16px;
-        background-image: url('assets/images/icon-search.svg');
-        background-repeat: no-repeat;
-        background-size: 16px 16px;
-        background-position: 8px center;
-        background-color:rgba(29, 33, 69, 0.843);
-        border-color: transparent;
-        border-radius: 10px;
-        width: 30vw;
-    }
-
-    .search-button {
-        padding: 8px 12px;
-        font-size: 16px;
-        border-radius: 5px;
-        border-color: transparent;
-        background-color: rgb(57, 51, 239);
-        color: white;
-    }
-
-    .location{
-      height: 286px;
-      width: 51.875rem;
-      border-radius: 20px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-image: url('assets/images/bg-today-large.svg');
-    }
-
-    .information{
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-
-    .temp, .humidity, .wind, .precipitation{
-      height: 6rem;
-      width: 12rem;
-      border-radius: 15px;
-      background-color: rgba(29, 33, 69, 0.843);
-    }
-
-    .left-side{
-      flex-shrink: 2;
-      height: 286px;
-      width: 51.875rem;
-    }
-    .right-side{
-      height: 39.5rem;
-      border-radius: 15px;
-      width: 35%;
-      flex-shrink: 1;
-      background-color: rgba(29, 33, 69, 0.843);
-    }
-
-    .forecast{
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .days{
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .daily {
-      font-family: DMSans-Medium;
-      font-size: larger;
-      padding: 1rem 0;
-    }
-    .one, .two, .three, .four, .five, .six, .seven{
-      height: 10rem;
-      width: 6.5rem;
-      border-radius: 15px;
-      background-color: rgba(29, 33, 69, 0.843);
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="bodyContainer">
@@ -163,21 +16,20 @@
       </div>
 
       <div class="units">
-        <label for="fruits"><img src="assets/images/icon-units.svg" alt="Units" class="units"></label>
-        <select id="fruits" name="Units">
-          <option value="units">Units</option>
-          <option value="unit-one">Unit-1</option>
-          <option value="unit-one">Unit-1</option>
+        <img src="assets/images/icon-units.svg" alt="Units Icon" id="unitIcon">
+        <select id="unitSelect">
+          <option value="metric" selected>Units</option>
+          <option value="metric">Celsius (°C)</option>
+          <option value="imperial">Fahrenheit (°F)</option>
+          <option value="standard">Kelvin (K)</option>
         </select>
       </div>
-
     </div>
-
-
+    
+    
     <div class="about">How's the sky looking today?</div>
     
-
-
+    
     <div class="searchContainer">
       <div class="search-Bar">
         <input type="text" class="search-input" name="search-bar" placeholder="Search for a place..." id="search">
@@ -188,43 +40,118 @@
 
     <div class="forecast">
       <div class="left-side">
-          <div class="location"></div>
+        
+        <div class="location">
+            <div class="loc-info">
+              
+              <div class="left">
+                <div class="add">
+                  <div id="city"></div>,
+                  <div id="country"></div>
+                </div>
+                <div class="date">
+                  <div id="day"></div>,
+                  <div id="date_month"></div>,
+                  <div id="year"></div>
+                </div>
+              </div>
+
+              <div class="right">
+                <div class="icon">
+                  <img src="" alt="">
+                </div>
+                <div id="tem"></div>
+              </div>
+              
+            </div>
+          </div>
           
           
           <div class="information">
-            <div class="temp"></div>
-            <div class="humidity"></div>
-            <div class="wind"></div>
-            <div class="precipitation"></div>
+            <div class="o_inf">
+              <div class="box">Feels Like</div>
+              <div class="value" id="temp"></div>
+            </div>
+            <div class="o_inf">
+              <div class="box">Humidity</div>
+              <div class="value" id="humidity"></div>
+            </div>
+            <div class="o_inf">
+              <div class="box">Wind</div>
+              <div class="value" id="wind"></div>
+            </div>
+            <div class="o_inf">
+              <div class="box">Precipitation</div>
+              <div class="value" id="precipitation"></div>
+            </div>
           </div>
-          
           
           <div class="dailyForecast">
             <div class="daily">
               Daily forecast
             </div>
               <div class="days">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-                <div class="four"></div>
-                <div class="five"></div>
-                <div class="six"></div>
-                <div class="seven"></div>
+                <div class="card">
+                  <div class="day" id="day_1"></div>
+                  <div class="weather_type" id="weather_1"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_1"></div>
+                    <div class="min" id="min_1"></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="day"id="day_2"></div>
+                  <div class="weather_type" id="weather_2"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_2"></div>
+                    <div class="min" id="min_2"></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="day"id="day_3"></div>
+                  <div class="weather_type" id="weather_3"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_3"></div>
+                    <div class="min" id="min_3"></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="day"id="day_4"></div>
+                  <div class="weather_type" id="weather_4"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_4"></div>
+                    <div class="min" id="min_4"></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="day"id="day_5"></div>
+                  <div class="weather_type" id="weather_5"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_5"></div>
+                    <div class="min" id="min_5"></div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="day"id="day_6"></div>
+                  <div class="weather_type" id="weather_6"></div>
+                  <div class="temperature">
+                    <div class="max" id="max_6"></div>
+                    <div class="min" id="min_6"></div>
+                  </div>
+                </div>
               </div>
           </div>
 
 
       </div>
       <div class="right-side">
-        <div class="hourly-forecast"></div>
+        <div id="hourly-forecast">
+        </div>
       </div>
     </div>
+  </div>
 
+  <script src="index.js"></script>
 
-
-
-
-    </div>
-</body>
+</body>  
 </html>

@@ -1,0 +1,273 @@
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: rgb(3, 2, 34);
+      color: white;
+      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bodyContainer {
+      height: 90%;
+      width: 85%;
+    }
+
+    .title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 0rem 1rem 0rem;
+    }
+
+    @font-face {
+      font-family: "DMSans-Bold";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Bold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "DMSans-Light";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Light.ttf");
+    }
+    @font-face {
+      font-family: "DMSans-Medium";
+      src: url("assets/fonts/DM_Sans/static/DMSans-Medium.ttf");
+    }
+    @font-face {
+      font-family: "DMSans-SemiBold";
+      src: url("assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf");
+    }
+    @font-face {
+      font-family: "BricolageGrotesque";
+      src: url("assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf");
+    }
+    .about{
+      display: flex;
+      text-align: center;
+      justify-content: space-around;
+      font-size: clamp(1rem, 5vw, 3.65rem);
+      font-family: "BricolageGrotesque";
+      padding: 2.5rem;
+      white-space: nowrap;
+    }
+
+    .searchContainer {
+      display: flex;
+      justify-content: space-around;
+      padding: 2rem;
+    }
+
+    .search-Bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-input {
+        font-size: 16px;
+        background-image: url('assets/images/icon-search.svg');
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: 1.5rem center;
+        background-color:rgba(29, 33, 69, 0.843);
+        border-color: transparent;
+        border-radius: 15px;
+        width: 37vw;
+        height: 3.5em;
+        color: white;
+        padding-left: 3rem;
+    }
+
+    .search-input::placeholder{
+      font-size: large;
+    }
+    .search-button {
+        font-size: 16px;
+        height: 3.5em;
+        width: 8vw;
+        border-radius: 15px;
+        border-color: transparent;
+        background-color: rgb(57, 51, 239);
+        color: white;
+    }
+
+    .location{
+      height: 35vh;
+      width: 56vw;
+      border-radius: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('assets/images/bg-today-large.svg');
+      display: flex;
+      align-items: center;
+    }
+
+    .loc-info{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        height: 7rem;
+        width: 30%;
+        margin: 2rem;
+    }
+    .add{
+        display: flex;
+        font-family: "DMSans-SemiBold";
+        font-size: clamp(1rem, 3vw, 2rem);
+        padding: .5rem;
+    }
+    .date{
+        display: flex;
+        font-family: "DMSans-Light";
+        font-size: clamp(.5rem, 1.5vw, 4rem);
+        padding: .5rem;
+        white-space: nowrap;
+      }
+      
+    .units {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+  
+    #unitIcon {
+        width: 20px;
+        height: 20px;
+      }
+
+    .right{
+        display: flex;
+        justify-content: space-between;
+        height: 7rem;
+        width: 40%;
+        margin: 2rem;
+        img{
+            height: 100px;
+        }
+    }
+
+    #tem{
+        font-family: "DMSans-Bold";
+        display: flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        align-items: center;
+        font-size: clamp(1rem, 6.5vw, 16rem);
+    }
+
+
+    .information{
+      display: flex;
+      justify-content: space-between;
+      gap: 1vw;
+      padding: 1rem auto;
+    }
+
+    .o_inf{
+      font-family: "DMSans-Medium";
+      height: 8rem;
+      width: 12vw;
+      border-radius: 15px;
+      margin: 1rem auto;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+    .box{
+      white-space: nowrap;
+      font-size: clamp(.001rem, 1vw, 2.5rem);
+      padding: 1.5rem 2rem;
+    }
+
+    .value{
+      /* white-space: nowrap; */
+      font-size: clamp(.5rem, 1.5vw, 3rem);
+      padding: 0 2rem;
+    }
+
+    .left-side{
+      width: 56vw;
+    }
+    .right-side{
+      height: 44rem;
+      border-radius: 15px;
+      width: 27vw;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+
+    .forecast{
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1vw;
+    }
+
+    .days{
+      display: flex;
+      justify-content: space-between;
+      gap: 1vw;
+    }
+    
+    .daily {
+      font-family: "DMSans-Medium";
+      font-size: larger;
+      padding: 1rem 0;
+    }
+    .card{
+      font-family: "DMSans-Light";
+      height: 11rem;
+      width: 8vw;
+      border-radius: 15px;
+      background-color: rgba(29, 33, 69, 0.843);
+    }
+    
+    .day, .weather_type{
+      margin: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+    }
+    .temperature{
+      display: flex;
+      justify-content: space-around;
+    }
+
+
+
+
+#hourly-forecast {
+  font-family: "DMSans-Medium";
+  text-align: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.hour-card {
+  font-family: "DMSans-Light";
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin: 1.65rem auto;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  width: 20vw;
+  align-items: center;
+}
+
+.hour-time {
+  font-size: clamp(.5rem, .8rem, 1rem);
+  color: #eee;
+}
+
+.hour-temp {
+  font-weight: bold;
+  margin-top: 3px;
+}
